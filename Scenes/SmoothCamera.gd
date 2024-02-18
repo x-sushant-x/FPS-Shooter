@@ -3,7 +3,7 @@ Rotation on y axis is handled by Player.gd But for x axis we have a dummy node a
 To smoothen this we will blend it. """
 
 extends Camera3D
-var speed : float = 44.0
+@export var speed : float = 44.0
 
 func _physics_process(delta):
 	var weight : float = delta * speed
