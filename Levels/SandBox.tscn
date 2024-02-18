@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvjkm70mjjsql"]
+[gd_scene load_steps=8 format=3 uid="uid://cvjkm70mjjsql"]
 
 [ext_resource type="PackedScene" uid="uid://c6hmguf0s1l0l" path="res://Scenes/Player.tscn" id="1_a6p4e"]
+[ext_resource type="Material" uid="uid://dxieliipfic2g" path="res://Materials/NormalBox.tres" id="2_iqi10"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m2xxg"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,8 +19,8 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0sm0g"]
 albedo_color = Color(0.356863, 0.356863, 0.356863, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pss6v"]
-albedo_color = Color(0.682353, 0.0941176, 0.160784, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mslbj"]
+albedo_color = Color(0.270588, 0.270588, 0.270588, 1)
 
 [node name="Sandbox" type="Node3D"]
 
@@ -38,17 +39,38 @@ use_collision = true
 [node name="Player" parent="." instance=ExtResource("1_a6p4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62335, 0.5, -3.61207)
-material_override = SubResource("StandardMaterial3D_pss6v")
+[node name="LevelObjects" type="Node3D" parent="."]
+
+[node name="Baundaries" type="Node3D" parent="."]
+
+[node name="BaundaryOne" type="CSGBox3D" parent="Baundaries"]
+transform = Transform3D(64, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, -31.501)
+material_override = SubResource("StandardMaterial3D_mslbj")
 use_collision = true
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62335, 1.46952, -3.61207)
-material_override = SubResource("StandardMaterial3D_pss6v")
+[node name="BaundaryTwo" type="CSGBox3D" parent="Baundaries"]
+transform = Transform3D(64, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 31.4953)
+material_override = SubResource("StandardMaterial3D_mslbj")
 use_collision = true
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08643, 0.507496, -3.61207)
-material_override = SubResource("StandardMaterial3D_pss6v")
+[node name="BaundaryThree" type="CSGBox3D" parent="Baundaries"]
+transform = Transform3D(-2.79753e-06, 0, 1, 0, 2, 0, -64, 0, -4.37114e-08, 31.5505, 1, 0.321324)
+material_override = SubResource("StandardMaterial3D_mslbj")
+use_collision = true
+
+[node name="BaundaryFour" type="CSGBox3D" parent="Baundaries"]
+transform = Transform3D(-2.79753e-06, 0, 1, 0, 2, 0, -64, 0, -4.37114e-08, -31.5051, 1, 0.321324)
+material_override = SubResource("StandardMaterial3D_mslbj")
+use_collision = true
+
+[node name="Obstacles" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Obstacles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -3.559)
+material_override = ExtResource("2_iqi10")
+use_collision = true
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Obstacles"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.984, 0.5, -4.551)
+material_override = ExtResource("2_iqi10")
 use_collision = true
