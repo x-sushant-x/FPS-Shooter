@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvjkm70mjjsql"]
+[gd_scene load_steps=7 format=3 uid="uid://cvjkm70mjjsql"]
 
 [ext_resource type="PackedScene" uid="uid://c6hmguf0s1l0l" path="res://Scenes/Player.tscn" id="1_a6p4e"]
 
@@ -15,6 +15,12 @@ sky = SubResource("Sky_yn4d2")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0sm0g"]
+albedo_color = Color(0.356863, 0.356863, 0.356863, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pss6v"]
+albedo_color = Color(0.682353, 0.0941176, 0.160784, 1)
+
 [node name="Sandbox" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -26,7 +32,23 @@ shadow_enabled = true
 
 [node name="Floor" type="CSGBox3D" parent="."]
 transform = Transform3D(64, 0, 0, 0, 1, 0, 0, 0, 64, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_0sm0g")
 use_collision = true
 
 [node name="Player" parent="." instance=ExtResource("1_a6p4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62335, 0.5, -3.61207)
+material_override = SubResource("StandardMaterial3D_pss6v")
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62335, 1.46952, -3.61207)
+material_override = SubResource("StandardMaterial3D_pss6v")
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08643, 0.507496, -3.61207)
+material_override = SubResource("StandardMaterial3D_pss6v")
+use_collision = true

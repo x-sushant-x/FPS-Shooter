@@ -1,7 +1,9 @@
 extends CharacterBody3D
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+var jump_height : float = 1
+
+@export var fall_multiplier : float = 3.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -16,11 +18,15 @@ func _physics_process(delta):
 	handle_camera_rotation()
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y -= gravity * delta
-
+		if velocity.y >= 0:
+			velocity.y -= gravity * delta
+		else:
+			velocity.y -= gravity * delta * fall_multiplier
+			
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		# This is the formula for projectile
+		velocity.y = sqrt(jump_height * 2 * gravity)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -39,7 +45,7 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseMotion:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			mouse_motion = -event.relative * 0.001
+			mouse_motion = -event.relative * 0.0015
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
