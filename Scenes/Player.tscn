@@ -8,7 +8,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ulmq"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_nb5h8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -21,7 +21,7 @@ shape = SubResource("CapsuleShape3D_2ulmq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56514, -0.301486)
 
 [node name="SmoothCamera" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56514, -0.301486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0589683, -0.0138853)
 script = ExtResource("2_ico88")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]

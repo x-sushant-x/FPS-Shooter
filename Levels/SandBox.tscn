@@ -1,76 +1,97 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvjkm70mjjsql"]
+[gd_scene load_steps=10 format=3 uid="uid://cpkn5kh7df1o7"]
 
 [ext_resource type="PackedScene" uid="uid://c6hmguf0s1l0l" path="res://Scenes/Player.tscn" id="1_a6p4e"]
 [ext_resource type="Material" uid="uid://dxieliipfic2g" path="res://Materials/NormalBox.tres" id="2_iqi10"]
+[ext_resource type="PackedScene" uid="uid://c21cbcc7iouuc" path="res://Scenes/Enemy.tscn" id="3_q56ji"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m2xxg"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ulltq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_yn4d2"]
-sky_material = SubResource("ProceduralSkyMaterial_m2xxg")
+[sub_resource type="Sky" id="Sky_dbb3q"]
+sky_material = SubResource("ProceduralSkyMaterial_ulltq")
 
-[sub_resource type="Environment" id="Environment_3avxg"]
+[sub_resource type="Environment" id="Environment_qkr0f"]
 background_mode = 2
-sky = SubResource("Sky_yn4d2")
+sky = SubResource("Sky_dbb3q")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0sm0g"]
-albedo_color = Color(0.356863, 0.356863, 0.356863, 1)
+[sub_resource type="NavigationMesh" id="NavigationMesh_34lvy"]
+vertices = PackedVector3Array(-14.5, 1.5, -14.5, -14.25, 1.5, -14, 14, 1.5, -14.25, 14.5, 1.5, -14.5, -14.25, 1.5, -14, -14.5, 1.5, -14.5, -14.5, 1.5, 14.5, -14, 1.5, 14.25, 14.5, 1.5, -14.5, 14, 1.5, -14.25, 14.25, 1.5, 14, 14.5, 1.5, 14.5, -14, 1.5, 14.25, -14.5, 1.5, 14.5, 14.5, 1.5, 14.5, 14.25, 1.5, 14, -1.25, 0.5, -5, 0.25, 0.5, -4.5, 0.25, 0.5, -6.25, 0.25, 0.5, -6.25, 1.25, 0.5, -6.5, 1.25, 0.5, -13.25, -1.25, 0.5, -5, 0.25, 0.5, -6.25, 1.25, 0.5, -13.25, -2, 0.5, -3.75, -1.25, 0.5, -5, 1.25, 0.5, -13.25, -13.25, 0.5, -13.25, -13.25, 0.5, -3.75, 2.5, 0.5, -6.25, 2.5, 0.5, -4.5, 4, 0.5, -4.25, 1.25, 0.5, -13.25, 1.25, 0.5, -6.5, 2.5, 0.5, -6.25, 4, 0.5, -4.25, 4.25, 0.5, -3.25, 13.25, 0.5, -3.25, 1.25, 0.5, -13.25, 2.5, 0.5, -6.25, 4, 0.5, -4.25, 13.25, 0.5, -3.25, 13.25, 0.5, -13.25, 2, 0.5, -2.5, 2.25, 0.5, -4.25, 0.5, 0.5, -4.5, 0, 0.5, -2.75, 3, 0.5, -2.25, 2, 0.5, -2.5, 0, 0.5, -2.75, -1.25, 0.5, -2.75, -1.25, 0.5, 13.25, 3, 0.5, 13.25, -1.25, 0.5, -2.75, -2, 0.5, -3.75, -13.25, 0.5, -3.75, -13.25, 0.5, 13.25, -1.25, 0.5, 13.25, 13.25, 0.5, -3.25, 4.25, 0.5, -3.25, 3.75, 0.5, -2.25, 3, 0.5, 13.25, 13.25, 0.5, 13.25, 3.75, 0.5, -2.25, 3, 0.5, -2.25, 3, 0.5, 13.25)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(18, 17, 16), PackedInt32Array(21, 20, 19), PackedInt32Array(24, 23, 22), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 29), PackedInt32Array(27, 29, 28), PackedInt32Array(32, 31, 30), PackedInt32Array(35, 34, 33), PackedInt32Array(36, 38, 37), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 39, 43), PackedInt32Array(41, 43, 42), PackedInt32Array(45, 44, 46), PackedInt32Array(46, 44, 47), PackedInt32Array(49, 48, 50), PackedInt32Array(50, 48, 51), PackedInt32Array(51, 48, 53), PackedInt32Array(51, 53, 52), PackedInt32Array(55, 54, 56), PackedInt32Array(56, 54, 58), PackedInt32Array(56, 58, 57), PackedInt32Array(60, 59, 61), PackedInt32Array(61, 59, 63), PackedInt32Array(61, 63, 62), PackedInt32Array(66, 65, 64)]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mslbj"]
-albedo_color = Color(0.270588, 0.270588, 0.270588, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hb1fd"]
+albedo_color = Color(0.286275, 0.286275, 0.286275, 1)
 
-[node name="Sandbox" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pasfc"]
+albedo_color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[node name="SandBox" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_3avxg")
+environment = SubResource("Environment_qkr0f")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
-
-[node name="Floor" type="CSGBox3D" parent="."]
-transform = Transform3D(64, 0, 0, 0, 1, 0, 0, 0, 64, 0, -0.5, 0)
-material_override = SubResource("StandardMaterial3D_0sm0g")
-use_collision = true
 
 [node name="Player" parent="." instance=ExtResource("1_a6p4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="LevelObjects" type="Node3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_34lvy")
 
-[node name="Baundaries" type="Node3D" parent="."]
+[node name="Floor" type="Node3D" parent="NavigationRegion3D"]
 
-[node name="BaundaryOne" type="CSGBox3D" parent="Baundaries"]
-transform = Transform3D(64, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, -31.501)
-material_override = SubResource("StandardMaterial3D_mslbj")
+[node name="Floor" type="CSGBox3D" parent="NavigationRegion3D/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_hb1fd")
 use_collision = true
+size = Vector3(30, 1, 30)
 
-[node name="BaundaryTwo" type="CSGBox3D" parent="Baundaries"]
-transform = Transform3D(64, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 31.4953)
-material_override = SubResource("StandardMaterial3D_mslbj")
+[node name="Side" type="CSGBox3D" parent="NavigationRegion3D/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -14.4778)
+material_override = SubResource("StandardMaterial3D_pasfc")
 use_collision = true
+size = Vector3(30, 1, 1)
 
-[node name="BaundaryThree" type="CSGBox3D" parent="Baundaries"]
-transform = Transform3D(-2.79753e-06, 0, 1, 0, 2, 0, -64, 0, -4.37114e-08, 31.5505, 1, 0.321324)
-material_override = SubResource("StandardMaterial3D_mslbj")
+[node name="Side2" type="CSGBox3D" parent="NavigationRegion3D/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 14.4869)
+material_override = SubResource("StandardMaterial3D_pasfc")
 use_collision = true
+size = Vector3(30, 1, 1)
 
-[node name="BaundaryFour" type="CSGBox3D" parent="Baundaries"]
-transform = Transform3D(-2.79753e-06, 0, 1, 0, 2, 0, -64, 0, -4.37114e-08, -31.5051, 1, 0.321324)
-material_override = SubResource("StandardMaterial3D_mslbj")
+[node name="Side3" type="CSGBox3D" parent="NavigationRegion3D/Floor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.4671, 0.5, 0.0388632)
+material_override = SubResource("StandardMaterial3D_pasfc")
 use_collision = true
+size = Vector3(30, 1, 1)
 
-[node name="Obstacles" type="Node3D" parent="."]
+[node name="Side4" type="CSGBox3D" parent="NavigationRegion3D/Floor"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.493, 0.5, 0.0388632)
+material_override = SubResource("StandardMaterial3D_pasfc")
+use_collision = true
+size = Vector3(30, 1, 1)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Obstacles"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -3.559)
+[node name="Obstacle" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31472, 0.5, -5.34715)
 material_override = ExtResource("2_iqi10")
 use_collision = true
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="Obstacles"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 6.984, 0.5, -4.551)
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="NavigationRegion3D/Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80494, 0.5, -3.76588)
 material_override = ExtResource("2_iqi10")
 use_collision = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="NavigationRegion3D/Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06792, 0.5, -3.2832)
+material_override = ExtResource("2_iqi10")
+use_collision = true
+radial_segments = 50
+rings = 50
+
+[node name="Enemy" parent="." instance=ExtResource("3_q56ji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.449348, 1, -7.52032)
