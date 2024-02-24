@@ -16,5 +16,4 @@ mesh = SubResource("CapsuleMesh_5ohl3")
 shape = SubResource("CapsuleShape3D_00td1")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 debug_path_custom_color = Color(0.956863, 0.0588235, 0, 1)

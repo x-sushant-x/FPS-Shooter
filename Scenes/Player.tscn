@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6hmguf0s1l0l"]
+[gd_scene load_steps=7 format=3 uid="uid://c6hmguf0s1l0l"]
 
 [ext_resource type="Script" path="res://Scenes/Player.gd" id="1_nb5h8"]
 [ext_resource type="Script" path="res://Scenes/SmoothCamera.gd" id="2_ico88"]
 [ext_resource type="Script" path="res://Scenes/Crosshair.gd" id="3_ahd5r"]
+[ext_resource type="PackedScene" uid="uid://ch3ae5cilogui" path="res://Scenes/Scar.tscn" id="3_bfwpx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qtkig"]
 
@@ -21,8 +22,10 @@ shape = SubResource("CapsuleShape3D_2ulmq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56514, -0.301486)
 
 [node name="SmoothCamera" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0589683, -0.0138853)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0852001, 0.0589683, -0.0138853)
 script = ExtResource("2_ico88")
+
+[node name="Scar" parent="CameraPivot/SmoothCamera" instance=ExtResource("3_bfwpx")]
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch3ae5cilogui"]
+
+[ext_resource type="Script" path="res://Scenes/HitscanWeapon.gd" id="1_cagsy"]
+[ext_resource type="PackedScene" uid="uid://bgcnlsdfgva8u" path="res://Assets/Weapons/Scar.fbx" id="2_bdwdj"]
+
+[node name="Scar" type="Node3D" node_paths=PackedStringArray("weapon_mesh")]
+script = ExtResource("1_cagsy")
+weapon_mesh = NodePath("Gun")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -100)
+
+[node name="Gun" parent="." instance=ExtResource("2_bdwdj")]
+transform = Transform3D(-0.199513, 0, -0.0139513, 0, 0.2, 0, 0.0139513, 0, -0.199513, 0.204677, -0.32507, -0.970249)
